@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+    <TITLE>"POLL LIST "</TITLE>
+</HEAD>
+</HTML>
+
+<BODY>><CENTRE>
+    <H2> <span id ="title"> PLACE YOUR VOTE HERE</span_id> </H2>
+    
+</CENTRE></BODY>
+YOU CAN VOTE ON WHICHEVER ISSUES AND RETURN LATER TO VOTE ON SOME MORE 
+
+ <%= form_tag :action => 'record_votes' do %>
+
+  <%= hidden_field_tag(:username, @uname) %>
+
+  <ol>
+  <% for polls in @polls %>
+    <p>
+    <li><font size=+1><%= poll.body %>   
+        <%= select "poll", poll.id,
+                   [["Your vote?", :no_vote], ["Yes", :yes], ["No", :no],
+                    ["Abstain", :abstain]] %>
+        </font>
+        <br />
+        <font size=-1>(Vote due by: <%= poll.end %>)</font>
+    </li>
+  <% end %>
+  </ol>
+
+  <b />
+
+  <center>
+  <p>
+  <%= submit_tag "Place Vote(s)" %>
+  </center>
+
+  <% end %>
+
+  </BODY>
+  </HTML>

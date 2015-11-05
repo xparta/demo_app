@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+    <TITLE >VOTIGN REGISTRATION </TITLE>
+</HEAD>
+<BODY>
+    <CENTRE>
+        <H2>
+            "ENTER USER ID AND PASSWORD TO VOTE "
+        </H2>
+    </CENTRE>
+    </BODY>
+<%= form_tag :action => 'list' do %>
+<centre>
+    <table>
+        <tr><td>username :</td><td><%= text_field_tag :username %></td></tr>
+        <tr><td>Password :</td><td><%= text_field_tag :pword %></td></tr>
+    </table>
+    <br/> 
+    <%= submit_tag 'Login' %>
+    </centre>
+    
+    <%=end%>
+    
+    </HTML>
